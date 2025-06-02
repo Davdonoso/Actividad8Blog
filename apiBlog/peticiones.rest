@@ -1,0 +1,70 @@
+@host = http://localhost:3000
+
+### todos los autores
+GET {{host}}/api/autores
+
+### Todos los posts
+GET {{host}}/api/posts
+
+### Recuperar un autor por id
+
+GET {{host}}/api/autores/2
+
+### Recuperar un post por id
+GET {{host}}/api/posts/2
+
+### Recuperar todos los posts de cada autor
+GET {{host}}/api/autores/posts
+
+### Recuperar los posts de un autor por id
+GET {{host}}/api/posts/autor/3
+
+### Crear un nuevo autor
+POST {{host}}/api/autores
+Content-Type: application/json
+
+{
+  "nombre": "Francisco Perez",
+  "email": "f.perez@gmail.com",
+  "imagen": "http://www.dave.com/imagen2.jpg"
+}
+
+### Crear un nuevo post
+POST {{host}}/api/posts
+Content-Type: application/json
+
+{
+  "titulo": "la vida",
+  "descripcion": "Vivir peligrosamente",
+  "categoria": "ciencia",
+  "autor_id":2
+}
+
+### Actualizar un autor
+PUT {{host}}/api/autores/5
+Content-Type: application/json
+
+{
+  "nombre": "CRISTNA GARCIA",
+  "email": "garcia.c@gmail.com",
+  "imagen": "http://www.dave.com/imagen2.jpg"
+}
+
+### Actualizar un post
+PUT {{host}}/api/posts/1
+Content-Type: application/json
+
+{
+  "titulo": "la caverna",
+  "descripcion": "Las cavernas mas profundas del mundo",
+  "categoria": "naturaleza",
+  "autor_id":5
+}
+
+### Eliminar un autor
+DELETE {{host}}/api/autores/1
+
+### Eliminar un post
+DELETE {{host}}/api/posts/5
+
+
